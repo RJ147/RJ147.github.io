@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tutorials Point</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="./index.html"><i class="fa fa-home black-text"></i> Home</a>
+
+        <a href="./contact.html"><i class="fa fa-phone black-text"></i> Contact</a>
+
+    </nav>
+
+    <!-- Main content -->
+
+    <header role="banner">
+        <h1>My First Website!</h1>
+    </header>
+
+    <div class="main-content" data-test="hi">
+
+        <h2 draggable="true" ondrag="myFunction()" class="indigo-text medium-font" id="intro">Hi, I am Ramneet!</h2>
+        <p ondblclick="myFunction()" class="indigo-text italic-text large-font">This is my first time coding. I hope to
+            learn many things and put them to use!</p>
+        <p onclick="changeName()" class="indigo-text italic-text large-font"> Please improve your intro!
+        </p>
+
+        <section class="indigo-text medium-font new-font">
+            Hobbies: Playing games, playing volleyball, basketball, soccer, reading books, listening to music, and
+            hanging out with friends.
+            <br>
+            <br>
+            Favourite Subject: Accounting
+            <br>
+            <br>
+            Future Career: Accountant
+            <br>
+            <br>
+            Pet Peeve: Chewing Loudly
+        </section>
+
+        <img src="./Profile.jpg" alt="profile photo" width="70%">
+
+        <h3 class="indigo-text medium-font"> My Personal Blog</h3>
+        <video width="700" height="500" controls>
+            <source src="./mov_bbb.mp4" type="video/mp4">
+        </video>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <a href="https://www.google.com/">This is my external link</a>
+
+    </div>
+
+    <h4>User Details Form</h4>
+    <form class="myForm" id="myForm">
+
+        <label for="first-name">First Name</label>
+        <input type="text" name="first-name" id="first-name" placeholder="Give me your name! >:D">
+
+        <br>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Hacker Alert! Jk jk!">
+
+        <br>
+
+        <label for="birthday">Birthday</label>
+        <input type="date" name="birthday" id="birthday">
+
+        <br>
+
+        <input type="submit" value="Submit This Form">
+    </form>
+
+    <!-- Background Image -->
+    <section class="stories-section black-text">
+        <h5 class="large-font">My Story</h5>
+        <div class="white-text story-summary">My older sister's toys were stolen from me, I ruined my mother's
+            cosmetics, and I overindulged in sugar when I was younger. I'm afraid of a lot of things, like being alone
+            or being left out of activities. I'm also afraid of drowning and insects. Every time an insect flew by, I
+            was the one who would jump in fear. None of my siblings even raised an eyebrow. In the end, I would always
+            flee and humiliate myself in front of others. I've chosen not to allow my concerns stop me from doing
+            something, even if I've never been close to an ocean, river, or lake before. The next step for me will be to
+            find and accomplish a goal. There are a lot of things that will keep me from achieving my objective. I'll
+            have to give it my all. My ultimate objective is to become an Accountant, and I'll do all in my ability to
+            get there.</div>
+    </section>
+
+    <!-- Joke Generator -->
+    <section>
+        <h1>Joke Generator</h1>
+        <div id="joke" class="indigo-text jokes">
+            You are so stinky.
+        </div>
+        <button class="joke-button" onclick="generateJoke()">Generate a Joke</button>
+    </section>
+    <footer>
+
+    </footer>
+
+    <script>
+
+        var first_name = "Ramneet";
+        var last_name = "Jhutty";
+
+        function calculateSum(firstNumber, secondNumber) {
+            var sumOfTwoNumbers = firstNumber + secondNumber;
+
+            return sumOfTwoNumbers;
+        }
+
+        var sum = calculateSum(5, 10);
+
+        console.log("Sum of two nums", sum);
+
+        function myFunction() {
+            var funnyEmoji = "🥳";
+            console.log(funnyEmoji);
+        }
+
+        function changeName() {
+            document.getElementById("intro").innerHTML = "Hi, my name is Ramneet. I am a 16 year old girl with pronouns she/her. I have never coded before so I will try my best now to make an awesome website!"
+        }
+
+        document.getElementById("myForm").addEventListener("submit", handleFormSumbit)
+
+        function handleFormSumbit(event) {
+            event.preventDefault()
+
+            var name = document.getElementById("first-name").value;
+            var email = document.getElementById("email").value;
+            var birthday = document.getElementById("birthday").value;
+
+            console.log(name)
+            console.log(email)
+            console.log(birthday)
+
+            document.getElementById("intro").innerHTML = name
+        }
+
+        var jokesArray = [
+            "I used to run a dating service for chickens, but I was struggling to make hens meet.",
+            "What do you call a lazy kangaroo? A pouch potato.",
+            "What does a pig put on dry skin? Oinkment.",
+            "What do you call it when a snowman throws a tantrum? A meltdown.",
+            "Did you hear about the guy whose left side was cutt off? He's all right now.",
+            "Which is faster, hot or cold? Hot, because you can catch cold.",
+            "What do you call a pig that does karate? A pork chop.",
+            "What do you call a pony with a sore throat? A little horse.",
+            "What do you call a fake noodle? An impasta.",
+            "Why does Humpty Dumpty love autumn? Because he had a great fall.",
+            "Why didn't the melons get married? Because they cantaloupe.",
+        ]
+
+        function generateJoke() {
+            var randomNumber = Math.random() * 10;
+
+            var randomInteger = Math.floor(randomNumber);
+
+            var randomJoke = jokesArray[randomInteger]
+
+            document.getElementById("joke").innerHTML = randomJoke;
+        }
+
+
+    </script>
+</body>
+
+
+
+
+
+</html>
